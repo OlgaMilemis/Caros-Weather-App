@@ -63,13 +63,6 @@ a {
   top: -34px;
 }
 
-.CurrentWeather .active {
-  cursor: default;
-}
-.CurrentWeather .active:hover {
-  text-decoration: none;
-}
-
 .CurrentWeather img {
   margin-right: 20px;
   position: relative;

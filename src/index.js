@@ -83,12 +83,12 @@ function showTemperature(response) {
 
   cityElement.innerHTML = response.data.name;
   dateDisplay.innerHTML = formatDate(currentTime);
-  celsiusTemp = response.data.main.temp;
-  minCelsius = response.data.main.temp_min;
-  maxCelsius = response.data.main.temp_max;
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  minTempElement.innerHTML = Math.round(minCelsius);
-  maxTempElement.innerHTML = Math.round(maxCelsius);
+  temp = response.data.main.temp;
+  tempMin = response.data.main.temp_min;
+  tempMax = response.data.main.temp_max;
+  temperatureElement.innerHTML = Math.round(temp);
+  minTempElement.innerHTML = Math.round(tempMin);
+  maxTempElement.innerHTML = Math.round(tempMax);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -114,33 +114,6 @@ function showCity(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#actualTemp");
-  let minTempElement = document.querySelector("#minTemp");
-  let maxTempElement = document.querySelector("#maxTemp");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let minFahrenheit = (minCelsius * 9) / 5 + 32;
-  let maxFahrenheit = (maxCelsius * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-  minTempElement.innerHTML = Math.round(minFahrenheit);
-  maxTempElement.innerHTML = Math.round(maxFahrenheit);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#actualTemp");
-  let minTempElement = document.querySelector("#minTemp");
-  let maxTempElement = document.querySelector("#maxTemp");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  minTempElement.innerHTML = Math.round(minCelsius);
-  maxTempElement.innerHTML = Math.round(maxCelsius);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
 function showPosition(position) {
   let apiKey = "5eac19cf21f53d5d30820a9a9bafd9f0";
   let units = "metric";
@@ -158,20 +131,10 @@ function getCurrentCoords(event) {
 let dateDisplay = document.querySelector("#date");
 dateDisplay.innerHTML = formatDate(currentTime);
 
-let celsiusTemp = null;
-let minCelsius = null;
-let maxCelsius = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCity);
 
 let buttonCurrentCoords = document.querySelector("#current-location-button");
 buttonCurrentCoords.addEventListener("click", getCurrentCoords);
-
-let fahrenheitLink = document.querySelector("#linkF");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-let celsiusLink = document.querySelector("#linkC");
-celsiusLink.addEventListener("click", showCelsius);
 
 search("Moscow");
