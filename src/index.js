@@ -36,10 +36,10 @@ function showForecast(response) {
 
   let nextDaysForecastHTML = `<div class="row">`;
   nextDaysForecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index !== 0 && index < 7) {
       nextDaysForecastHTML =
         nextDaysForecastHTML +
-        ` <div class="col-2">
+        ` <div class="col-2 eachDay">
               <div class="forecastDay">${formatNextDays(forecastDay.dt)}</div>
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon

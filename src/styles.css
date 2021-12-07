@@ -33,15 +33,16 @@ a {
   text-align: center;
   padding: 40px;
   background: #bbd4eb;
-  border: 1px solid;
-  border-radius: 10px;
-  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
-  color: #e771cd;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgb(206, 155, 232);
+  color: #d47ae8;
 }
+
 .btn {
   color: #faedf0;
   background-color: #d47ae8;
   border-color: #d47ae8;
+  box-shadow: 10px 10px 20px rgb(206, 155, 232);
 }
 .btn:hover {
   color: #d47ae8;
@@ -49,8 +50,12 @@ a {
   border-color: #d47ae8;
 }
 
+.CurrentWeather {
+  border-radius: 20px;
+}
+
 .CurrentWeather .actualTemp {
-  padding-left: 20px;
+  padding-left: 25px;
   color: purple;
   font-size: 64px;
   line-height: 1;
@@ -59,7 +64,8 @@ a {
 
 .CurrentWeather .units {
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bolder;
   top: -34px;
 }
 
@@ -71,9 +77,9 @@ a {
 }
 
 .CurrentWeather .conditions {
-  text-align: left;
-  font-size: 20px;
-  line-height: 1;
+  text-align: center;
+  font-size: 17px;
+  line-height: 19px;
 }
 .CurrentWeather .description {
   font-size: 20px;
@@ -83,18 +89,21 @@ a {
 .CurrentWeather:hover {
   background: #daddfc;
   color: rgb(185, 29, 120);
-  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgb(206, 155, 232);
+  transition: all 150ms ease-in-out;
 }
 
 .nextDaysForecast {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 20px;
+  font-weight: bolder;
   text-align: center;
 }
-.nextDaysForecast:hover {
+.nextDaysForecast .eachDay:hover {
   background: #daddfc;
+  box-shadow: 10px 10px 20px rgb(206, 155, 232);
   color: rgb(185, 29, 120);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .forecastTempMax {
